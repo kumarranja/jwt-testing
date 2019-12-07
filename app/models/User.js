@@ -12,15 +12,14 @@ const hooks = {
 const tableName = 'users';
 
 const User = sequelize.define('User', {
-	email: {
-		type: Sequelize.STRING,
-		unique: true,
-	},
-	password: {
-		type: Sequelize.STRING,
-	},
-}, { hooks, tableName });
 
+    first_name: DataTypes.STRING,
+    last_name: DataTypes.STRING,
+    username: DataTypes.STRING,
+    email: DataTypes.STRING,
+    dob: DataTypes.DATE,
+    password: DataTypes.STRING
+  }, {});
 
 User.prototype.toJSON = function () {
 	const values = Object.assign({}, this.get());
